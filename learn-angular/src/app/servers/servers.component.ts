@@ -19,4 +19,7 @@ export class ServersComponent {
         this.servers.push({name: this.serverName});
         this.serverCreationStatus = 'Server was created, server name is   ' + this.serverName;
     }
+    LocalClientNotified(eventData: {name: string}) {
+        console.log('Nofification received from ' + eventData.name);
+    }
 }

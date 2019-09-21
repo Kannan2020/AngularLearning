@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -10,6 +10,7 @@ export class ServerComponent implements OnInit {
   serverStatus = 'Offline';
   // tslint:disable-next-line: no-input-rename
   @Input('serverInfo') server: {name: string};
+  @Output()clientNotified = new EventEmitter<{name: string}>();
   constructor() {
     this.serverStatus = Math.random() > 0.5 ?  'Online' : 'Offline';
    }
@@ -21,5 +22,8 @@ getServerStatus() {
 }
 getColor() {
   return this.serverStatus === 'Online' ? 'green' : 'red';
+}
+NotifyServer() {
+this.clientNotified.emit({name: this.server.name});
 }
 }
