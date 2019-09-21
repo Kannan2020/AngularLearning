@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServerComponent implements OnInit {
   serverId = 10;
   serverStatus = 'Offline';
+  @Input() server: {name: string};
   constructor() {
     this.serverStatus = Math.random() > 0.5 ?  'Online' : 'Offline';
    }
