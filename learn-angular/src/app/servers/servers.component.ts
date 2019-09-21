@@ -7,9 +7,13 @@ styleUrls: ['./servers.component.css']
 })
 export class ServersComponent {
 allowNewServer = false;
+serverCreationStatus = 'No Server was created!';
 constructor() {
     setTimeout(() => {
         this.allowNewServer = true;
     }, 2000);
+}
+onServerCreate() {
+    this.serverCreationStatus = 'Server was created!';
 }
 }
