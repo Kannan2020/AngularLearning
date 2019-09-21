@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-selector: 'app-server',
-templateUrl: './servers.component.html',
+selector: 'app-servers',
+template: `<app-server></app-server><app-server></app-server>`,
 styleUrls: ['./servers.component.css']
 })
 export class ServersComponent {
