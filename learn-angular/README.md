@@ -31,3 +31,4 @@ npm install --save bootstrap@3
 
 Create Component
 ng g c [componentName] 
+ng g c recipes --spec false
