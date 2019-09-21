@@ -2,4 +2,4 @@
 <input type="text" class="form-control" [(ngModel)]="serverName">
 <button class="btn btn-primary" [disabled]='!allowNewServer' (click)="onServerCreate()">Add Server</button>
 <p *ngIf="serverCreationStatus">{{serverCreationStatus}}</p>
-<app-server *ngFor="let server of servers" [serverInfo]="server" (clientNotified)="LocalClientNotified($event)"></app-server>
+<app-server *ngFor="let server of servers" [serverInfo]="server" (notifyClient)="LocalClientNotified($event)"></app-server>

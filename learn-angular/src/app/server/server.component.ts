@@ -10,7 +10,8 @@ export class ServerComponent implements OnInit {
   serverStatus = 'Offline';
   // tslint:disable-next-line: no-input-rename
   @Input('serverInfo') server: {name: string};
-  @Output()clientNotified = new EventEmitter<{name: string}>();
+  // tslint:disable-next-line: no-output-rename
+  @Output('notifyClient')clientNotified = new EventEmitter<{name: string}>();
   constructor() {
     this.serverStatus = Math.random() > 0.5 ?  'Online' : 'Offline';
    }
