@@ -15,6 +15,6 @@ export class ServersComponent {
         }, 2000);
     }
     onServerCreate() {
-        this.serverCreationStatus = 'Server was created!';
+        this.serverCreationStatus = 'Server was created! ' + this.serverName;
     }
 }
