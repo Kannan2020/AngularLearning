@@ -2,4 +2,6 @@
 <p appBasicHighlight>Custom Directive</p>
 <p appBetterHighlight [defaultColor]="'yellow'" highLightColor='red'>Custom Directive</p>
 <hr>
-<app-servers></app-servers>
+<button class="btn btn-default" (click)="showServer=!showServer">Show/Hide Server</button>
+<hr>
+<app-servers *appUnless="showServer"></app-servers>
