@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
     selector: 'app-servers',
@@ -10,10 +11,13 @@ export class ServersComponent {
     serverCreationStatus = '';
     serverName = 'Test Server';
     servers = [{name: 'Test Server - 1'}, {name: 'Test Server - 2'}];
-    constructor() {
+    constructor(private notificationServer: NotificationService) {
         setTimeout(() => {
             this.allowNewServer = true;
         }, 2000);
+        this.notificationServer.statusNotification.subscribe((message: string) => {
+            alert('Notification from ' + message);
+        });
     }
     onServerCreate() {
         this.servers.push({name: this.serverName});

@@ -7,6 +7,7 @@ import { ServersComponent } from './servers/servers.component';
 import { ServerComponent } from './server/server.component';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
+import { NotificationService } from './services/notification.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { BetterHighlightDirective } from './better-highlight/better-highlight.di
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
