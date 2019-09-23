@@ -2,4 +2,12 @@
 <p appBasicHighlight>Custom Directive</p>
 <p appBetterHighlight>Custom Directive</p>
 <hr>
+<div [ngSwitch]="value">
+    <div *ngSwitchCase="1">Value is 1</div>
+    <div *ngSwitchCase="2">Value is 2</div>
+    <div *ngSwitchCase="3">Value is 3</div>
+    <div *ngSwitchCase="4">Value is 4</div>
+    <div *ngSwitchCase="5">Value is 5</div>
+    <div *ngSwitchDefault>Default Value</div>
+</div>
 <app-servers></app-servers>
