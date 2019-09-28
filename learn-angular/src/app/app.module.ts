@@ -1,28 +1,42 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule  } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
-import { ServerComponent } from './server/server.component';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
-import { NotificationService } from './services/notification.service';
-
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user/user.component';
+import { Route, RouterModule } from '@angular/router';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
+import { ServerComponent } from './servers/server/server.component';
+import { ServersService } from './servers/servers.service';
+const appRotes: Route[] = [
+  { path: '', component: HomeComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'servers', component: ServerComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
     ServersComponent,
     BasicHighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    HomeComponent,
+    UsersComponent,
+    UserComponent,
+    EditServerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRotes)
   ],
-  providers: [NotificationService],
+  providers: [ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
