@@ -40,7 +40,11 @@ const appRotes: Route[] = [
     }
 ];
 @NgModule({
+    /** ! this useHash is used to add # in the Url is Server is not supporting latest routing
+     need to use this Hash **/
+    // imports: [RouterModule.forRoot(appRotes, {useHash: true})],
     imports: [RouterModule.forRoot(appRotes)],
+
     exports: [RouterModule]
 })
 export class AppRoutingModule {
