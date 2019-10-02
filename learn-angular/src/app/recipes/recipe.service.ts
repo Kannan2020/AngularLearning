@@ -28,11 +28,14 @@ export class RecipeService {
       ]
     )
   ];
-  getRecipe() {
+  getRecipes() {
     // slice is using to send a copy of array, any changes is happend in out side it will not modify any data in base
     return this.recipes.slice();
   }
   addIngredientTOShopinglist(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
+  }
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 }
